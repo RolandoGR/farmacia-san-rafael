@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b5f5a">
+  <title>Inventario y alternativas</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b5f5a'/%3E%3Cpath d='M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-vista-actual="mostrador">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="barra">
+    <div class="barra-interior">
+      <div class="marca">
+        <span class="marca-logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M13 6h6v7h7v6h-7v7h-6v-7H6v-6h7z"/></svg>
+        </span>
+        <div class="marca-texto">
+          <span class="marca-nombre" data-nombre-farmacia>Farmacia</span>
+          <span class="marca-sub">Inventario y alternativas</span>
+        </div>
+      </div>
+      <div class="selector-vista" role="group" aria-label="Vista">
+        <button type="button" data-vista="mostrador" aria-pressed="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          Mostrador
+        </button>
+        <button type="button" data-vista="admin" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          Administración
+          <span class="insignia" id="insignia-alertas" hidden></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="contenido" class="contenido">
+    <main id="vista-mostrador" class="vista" aria-label="Mostrador"></main>
+    <main id="vista-admin" class="vista" aria-label="Administración" hidden></main>
+  </div>
+
+  <footer class="pie">
+    <div class="pie-interior">
+      <span><span data-nombre-farmacia>Farmacia</span> · <span id="version-app"></span></span>
+      <span class="pie-nota">Prototipo · Información de ejemplo con fines ilustrativos</span>
+      <button type="button" class="enlace" id="boton-acerca">Acerca de</button>
+    </div>
+  </footer>
+
+  <div id="avisos" class="avisos" aria-live="polite"></div>
+
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/datos-iniciales.js"></script>
+  <script src="js/utilidades.js"></script>
+  <script src="js/almacen.js"></script>
+  <script src="js/mostrador.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
